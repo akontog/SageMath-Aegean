@@ -1,0 +1,94 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+/* banner */
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f9f9f9;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.banner img {
+  margin: 0 15px;
+  height: 60px;
+}
+/* Βασικό μενού πάνω */
+.topnav {
+  background: #333;
+  padding: 0.5em;
+}
+
+.topnav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.topnav li {
+  margin-right: 1em;
+}
+
+.topnav a {
+  color: white;
+  text-decoration: none;
+}
+
+.topnav a:hover {
+  text-decoration: underline;
+}
+
+/* Layout με sidebar */
+.layout {
+  display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 200px;
+  background: #f4f4f4;
+  padding: 1em;
+  border-right: 1px solid #ccc;
+  height: 100vh;
+  position: sticky;
+  top: 0; /* μένει πάντα ορατό */
+}
+
+.sidebar h3 {
+  margin-top: 0;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin-bottom: 0.5em;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #333;
+}
+
+.sidebar a:hover {
+  text-decoration: underline;
+}
+
+/* Περιεχόμενο */
+main {
+  flex: 1;
+  padding: 1.5em;
+}
+
+pre {
+  background: #eee;
+  padding: 0.5em;
+  border-radius: 5px;
+  overflow-x: auto;
+}

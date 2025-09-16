@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <title>Λογισμός</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Banner -->
+  <div id="banner-placeholder"></div>
+  
+  <!-- Μενού -->
+  <div id="menu-placeholder"></div>
+
+  <div class="layout">
+    <!-- Φόρτωση του sidebar -->
+    <aside class="sidebar" id="sidebar-placeholder"></aside>
+
+    <!-- Περιεχόμενο -->
+    <main>
+      <h1>Λογισμός</h1>
+
+      <section id="derivatives">
+        <h2>Παράγωγοι</h2>
+        <pre><code>
+var('x')
+diff(sin(x)^2, x)
+        </code></pre>
+      </section>
+
+      <section id="integrals">
+        <h2>Ολοκληρώματα</h2>
+        <pre><code>
+integral(exp(-x^2), x, -oo, oo)
+        </code></pre>
+      </section>
+
+      <section id="limits">
+        <h2>Όρια</h2>
+        <pre><code>
+limit((sin(x))/x, x=0)
+        </code></pre>
+      </section>
+    </main>
+  </div>
+
+  <!-- Script για φόρτωση μενού/πλευρικού -->
+  <script>
+    // Banner
+    fetch("banner.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("menu-placeholder").innerHTML = data);
+
+    // Βασικό μενού
+    fetch("menu.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("menu-placeholder").innerHTML = data);
+
+    // Sidebar για Λογισμό
+    fetch("sidebar-calculus.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("sidebar-placeholder").innerHTML = data);
+  </script>
+</body>
+</html>
