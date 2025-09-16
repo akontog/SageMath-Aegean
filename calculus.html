@@ -49,7 +49,7 @@ limit((sin(x))/x, x=0)
     // Banner
     fetch("banner.html")
       .then(res => res.text())
-      .then(data => document.getElementById("menu-placeholder").innerHTML = data);
+      .then(data => document.getElementById("banner-placeholder").innerHTML = data);
 
     // Βασικό μενού
     fetch("menu.html")
