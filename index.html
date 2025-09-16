@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <title>Λογισμός</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Banner -->
+  <div id="banner-placeholder"></div>
+  
+  <!-- Μενού -->
+  <div id="menu-placeholder"></div>
+
+  <div class="layout">
+    <!-- Φόρτωση του sidebar -->
+    <aside class="sidebar" id="sidebar-placeholder"></aside>
+
+    <!-- Περιεχόμενο -->
+    <main>
+      <h1>Αρχική</h1>
+
+      
+
+  <!-- Script για φόρτωση μενού/πλευρικού -->
+  <script>
+    // Banner
+    fetch("banner.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("banner-placeholder").innerHTML = data);
+
+    // Βασικό μενού
+    fetch("menu.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("menu-placeholder").innerHTML = data);
+  </script>
+</body>
+</html>
