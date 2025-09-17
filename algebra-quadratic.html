@@ -5,15 +5,6 @@
   <title>SageMath | Δευτεροβάθμια Εξίσωση</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
-  <script>
-    // Αυτό θα μετατρέψει το div σε διαδραστικό Sage Cell
-    document.addEventListener("DOMContentLoaded", function() {
-      sagecell.makeSagecell({
-        inputLocation: "#sagecode",
-        evalButtonText: "Υπολογισμός"
-      });
-    });
-  </script>
 </head>
 <body>
   <!-- Banner -->
@@ -36,9 +27,7 @@
       Απλώς εισάγετε τιμές και πατήστε Enter ή αλλάξτε πεδίο για να εκτελεστεί ο υπολογισμός.
       </p>
 
-      <div class="sagecell" id="sagecode">
-        <script type="text/x-sage" src="algebra-quadratic.sage"></script>
-      </div>
+      <div class="sagecell" id="sagecode"></div>
     </main>
   </div>
 
@@ -47,6 +36,19 @@
     fetch("banner.html").then(r=>r.text()).then(d=>document.getElementById("banner-placeholder").innerHTML=d);
     fetch("menu.html").then(r=>r.text()).then(d=>document.getElementById("menu-placeholder").innerHTML=d);
     fetch("sidebar-algebra.html").then(r=>r.text()).then(d=>document.getElementById("sidebar-placeholder").innerHTML=d);
+
+    fetch("algebra-quadratic.sage")
+      .then(r => r.text())
+      .then(code => {
+        const s = document.createElement("script");
+        s.type = "text/x-sage";
+        s.textContent = code;
+        document.getElementById("sagecode").appendChild(s);
+        sagecell.makeSagecell({
+          inputLocation: "#sagecode",
+          evalButtonText: "Υπολογισμός"
+        });
+      });
   </script>
 </body>
 </html>
