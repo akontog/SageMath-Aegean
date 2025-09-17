@@ -32,9 +32,9 @@
 
   <!-- Scripts για banner, menu, sidebar -->
   <script>
-    fetch("banner.html").then(r => r.text()).then(d => document.getElementById("banner-placeholder").innerHTML = d);
-    fetch("menu.html").then(r => r.text()).then(d => document.getElementById("menu-placeholder").innerHTML = d);
-    fetch("sidebar-algebra.html").then(r => r.text()).then(d => document.getElementById("sidebar-placeholder").innerHTML = d);
+    fetch("../banner.html").then(r => r.text()).then(d => document.getElementById("banner-placeholder").innerHTML = d);
+    fetch("../menu.html").then(r => r.text()).then(d => document.getElementById("menu-placeholder").innerHTML = d);
+    fetch("../sidebar-algebra.html").then(r => r.text()).then(d => document.getElementById("sidebar-placeholder").innerHTML = d);
 
     // Φόρτωση Sage κώδικα από εξωτερικό αρχείο και μόνο το interact
     fetch("algebra-quadratic.sage")
