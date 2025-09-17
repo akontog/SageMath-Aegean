@@ -42,8 +42,7 @@ body {
   text-decoration: underline;
 }
 
-/* Layout με sidebar */
-.layout {
+.content {
   display: flex;
 }
 
