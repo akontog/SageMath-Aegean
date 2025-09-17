@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <title>SageMath | Δευτεροβάθμια Εξίσωση</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
+</head>
+<body>
+  <!-- Banner -->
+  <div id="banner-placeholder"></div>
+
+  <!-- Πάνω μενού -->
+  <div id="menu-placeholder"></div>
+
+  <div class="content">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar-placeholder"></aside>
+
+    <!-- Περιεχόμενο -->
+    <main>
+      <h1>Λύση Δευτεροβάθμιας Εξίσωσης</h1>
+      <p>
+        Διαδραστικό demo SageMath: εισάγετε συντελεστές <em>a, b, c</em> για να λυθεί
+        η δευτεροβάθμια εξίσωση <strong>ax² + bx + c = 0</strong>.
+      </p>
+
+      <!-- Διαδραστικό SageCell μόνο με το interact -->
+      <div id="sagecode"></div>
+    </main>
+  </div>
+
+  <!-- Scripts για banner, menu, sidebar -->
+  <script>
+    fetch("banner.html").then(r => r.text()).then(d => document.getElementById("banner-placeholder").innerHTML = d);
+    fetch("menu.html").then(r => r.text()).then(d => document.getElementById("menu-placeholder").innerHTML = d);
+    fetch("sidebar-algebra.html").then(r => r.text()).then(d => document.getElementById("sidebar-placeholder").innerHTML = d);
+
+    // Φόρτωση Sage κώδικα από εξωτερικό αρχείο και μόνο το interact
+    fetch("algebra-quadratic.sage")
+      .then(r => r.text())
+      .then(code => {
+        sagecell.makeSagecell({
+          inputLocation: "#sagecode",  // div όπου θα εμφανιστεί μόνο το interactive
+          startupCode: code,           // τρέχει τον κώδικα
+          evalButtonText: "Υπολογισμός",
+          inline: false                // δεν εμφανίζει τον ίδιο τον κώδικα
+        });
+      });
+  </script>
+</body>
+</html>
