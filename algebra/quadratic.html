@@ -1,3 +1,40 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <title>SageMath | Άλγεβρα | Δευτεροβάθμια Εξίσωση</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
+  <script>
+    // Make the div with id 'mycell' a Sage cell
+    sagecell.makeSagecell({inputLocation:  '#mycell',
+                           template:       sagecell.templates.minimal,
+                           evalButtonText: 'Activate'});
+    </script>
+</head>
+<body>
+  <!-- Banner -->
+  <div id="banner-placeholder"></div>
+  
+  <!-- Μενού -->
+  <div id="menu-placeholder"></div>
+
+  <div class="content">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar-placeholder"></aside>
+
+    <!-- Περιεχόμενο -->
+    <main>
+      <h1>Λύση Δευτεροβάθμιας Εξίσωσης</h1>
+      <p>
+        Αυτό είναι ένα διαδραστικό demo των δυνατοτήτων του SageMath. Μπορείτε να υπολογίσετε τις ρίζες μιας δευτεροβάθμιας εξίσωσης εισάγοντας τιμές για τους συντελεστές a, b, c στο διάστημα [-10, 10]. Οι τιμές μπορούν να περιλαμβάνουν μαθηματικές παραστάσεις με μαθηματικά σύμβολα όπως: π, e, ln(2), sqrt(2), κ.ά.
+      </p>
+      <p>
+      Απλώς εισάγετε τιμές και πατήστε Enter ή αλλάξτε πεδίο για να εκτελεστεί ο υπολογισμός.
+      </p>
+
+<div id="mycell">
+  <script type="text/x-sage">
 @interact
 def solve_quadratic(
     a_str=input_box('1', label='a', type=str),
@@ -66,3 +103,17 @@ def solve_quadratic(
 
     except Exception:
         pretty_print(html("<span style='color:red'>Σφάλμα στην είσοδο: παρακαλώ συμπληρώστε σωστά τον μαθηματικό τύπο.</span>"))
+ </script>
+</div>
+    </main>
+  </div>
+
+  <!-- Scripts για banner, menu, sidebar -->
+  <script>
+    fetch("../banner.html").then(r=>r.text()).then(d=>document.getElementById("banner-placeholder").innerHTML=d);
+    fetch("../menu-folder.html").then(r=>r.text()).then(d=>document.getElementById("menu-placeholder").innerHTML=d);
+    fetch("sidebar-algebra.html").then(r=>r.text()).then(d=>document.getElementById("sidebar-placeholder").innerHTML=d);
+
+  </script>
+</body>
+</html>
