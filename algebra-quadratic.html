@@ -5,6 +5,12 @@
   <title>SageMath | Δευτεροβάθμια Εξίσωση</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
+  <script>
+    // Make the div with id 'mycell' a Sage cell
+    sagecell.makeSagecell({inputLocation:  '#mycell',
+                           template:       sagecell.templates.minimal,
+                           evalButtonText: 'Activate'});
+    </script>
 </head>
 <body>
   <!-- Banner -->
@@ -27,7 +33,13 @@
       Απλώς εισάγετε τιμές και πατήστε Enter ή αλλάξτε πεδίο για να εκτελεστεί ο υπολογισμός.
       </p>
 
-      <div class="sagecell" id="sagecode"></div>
+<div id="mycell">
+  <script type="text/x-sage">
+@interact
+def _(a=(1, 10)):
+    print(factorial(a))
+ </script>
+</div>
     </main>
   </div>
 
@@ -37,18 +49,6 @@
     fetch("menu.html").then(r=>r.text()).then(d=>document.getElementById("menu-placeholder").innerHTML=d);
     fetch("sidebar-algebra.html").then(r=>r.text()).then(d=>document.getElementById("sidebar-placeholder").innerHTML=d);
 
-    fetch("algebra-quadratic.sage")
-      .then(r => r.text())
-      .then(code => {
-        const s = document.createElement("script");
-        s.type = "text/x-sage";
-        s.textContent = code;
-        document.getElementById("sagecode").appendChild(s);
-        sagecell.makeSagecell({
-          inputLocation: "#sagecode",
-          evalButtonText: "Υπολογισμός"
-        });
-      });
   </script>
 </body>
 </html>
