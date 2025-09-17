@@ -4,12 +4,14 @@
   <meta charset="UTF-8">
   <title>SageMath | Δευτεροβάθμια Εξίσωση</title>
   <link rel="stylesheet" href="style.css">
-  <!-- Sage Cell script -->
   <script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
   <script>
-    sagecell.makeSagecell({
-      inputLocation: ".sagecell",
-      evalButtonText: "Υπολογισμός"
+    // Αυτό θα μετατρέψει το div σε διαδραστικό Sage Cell
+    document.addEventListener("DOMContentLoaded", function() {
+      sagecell.makeSagecell({
+        inputLocation: "#sagecode",
+        evalButtonText: "Υπολογισμός"
+      });
     });
   </script>
 </head>
@@ -34,7 +36,7 @@
       Απλώς εισάγετε τιμές και πατήστε Enter ή αλλάξτε πεδίο για να εκτελεστεί ο υπολογισμός.
       </p>
 
-      <div class="sagecell">
+      <div class="sagecell" id="sagecode">
         <script type="text/x-sage" src="algebra-quadratic.sage"></script>
       </div>
     </main>
