@@ -2,7 +2,7 @@
 <html lang="el">
 <head>
   <meta charset="UTF-8">
-  <title>SageMath | Αρχική</title>
+  <title>SageMath | Γεωμετρία</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,15 +13,15 @@
   <div id="menu-placeholder"></div>
 
   <div class="layout">
-    <!-- Φόρτωση του sidebar -->
     <aside class="sidebar" id="sidebar-placeholder"></aside>
 
-    <!-- Περιεχόμενο -->
     <main>
-      <h1>Αρχική</h1>
-
-      
-
+      <h1>Γεωμετρία</h1>
+      <p>
+        Η Γεωμετρία μελετά τις ιδιότητες του χώρου, των σχημάτων, των γραμμών και των επιφανειών. Από την κλασική Ευκλείδεια γεωμετρία μέχρι τη μη-Ευκλείδεια και τη διαφορική γεωμετρία, αποτελεί θεμέλιο πολλών εφαρμογών.
+      </p>
+    </main>
+  </div>
   <!-- Script για φόρτωση μενού/πλευρικού -->
   <script>
     // Banner
@@ -33,6 +33,11 @@
     fetch("menu.html")
       .then(res => res.text())
       .then(data => document.getElementById("menu-placeholder").innerHTML = data);
+
+    // Sidebar για Λογισμό
+    fetch("sidebar-geometry.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("sidebar-placeholder").innerHTML = data);
   </script>
 </body>
 </html>
