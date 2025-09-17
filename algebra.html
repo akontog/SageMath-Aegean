@@ -26,17 +26,14 @@
   </div>
   <!-- Script για φόρτωση μενού/πλευρικού -->
   <script>
-    // Banner
     fetch("banner.html")
       .then(res => res.text())
       .then(data => document.getElementById("banner-placeholder").innerHTML = data);
 
-    // Βασικό μενού
     fetch("menu.html")
       .then(res => res.text())
       .then(data => document.getElementById("menu-placeholder").innerHTML = data);
 
-    // Sidebar για Λογισμό
     fetch("sidebar-algebra.html")
       .then(res => res.text())
       .then(data => document.getElementById("sidebar-placeholder").innerHTML = data);
